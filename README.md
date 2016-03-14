@@ -45,12 +45,25 @@ $ git flow [feature|release|hotfix] finish <ブランチ名>
 
 ### 開発フロー
 #### feature
-開発開始。
+##### 開発開始
 ```
 $ git flow feature start <ブランチ名>
 ```
 
-開発終了。
+##### 開発をリモートへ
+複数人と同じブランチで作業する場合は、リモートへプッシュする。
+```
+$ git flow feature publish <ブランチ名>
+```
+
+##### 修正分を取り込む
+他の人の修正分をローカルにプルする。
+```
+$ git flow feature pull <ブランチ名>
+```
+
+##### 開発終了
+`develop`にマージされ、作成した`feature`が削除される。
 ```
 $ git flow feature finish <ブランチ名>
 ```
