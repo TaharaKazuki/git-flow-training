@@ -67,3 +67,24 @@ $ git flow feature pull <ブランチ名>
 ```
 $ git flow feature finish <ブランチ名>
 ```
+
+#### release
+##### リリース準備開始
+`develop`から`release`を作成する。
+```
+$ git flow release start <バージョン> <develpのコミット>
+```
+> develpのコミットは省略すると`HEAD`が使用される。
+
+##### リリース準備終了
+`release`で行った修正は、`feature`と同じようにプッシュする。
+```
+$ git flow release publish <バージョン>
+```
+
+##### TODO:
+`release`リポジトリの修正をトラッキングすることもできる。
+```
+$ git flow release track <バージョン>
+```
+
