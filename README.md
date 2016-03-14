@@ -42,3 +42,15 @@ $ git flow [feature|release|hotfix] start <ブランチ名>
 ```
 $ git flow [feature|release|hotfix] finish <ブランチ名>
 ```
+
+### 開発フロー
+#### feature
+開発開始。
+```
+$ git flow feature start <ブランチ名>
+```
+
+開発終了。
+```
+$ git flow feature finish <ブランチ名>
+```
