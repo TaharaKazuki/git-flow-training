@@ -77,7 +77,8 @@ $ git flow release start <バージョン> <develpのコミット>
 > develpのコミットは省略すると`HEAD`が使用される。
 
 ##### リリース準備終了
-`release`で行った修正は、`feature`と同じようにプッシュする。
+* `release`で行った修正は、`feature`と同じようにプッシュする。
+* `master`と`develop`にマージされ、`release`が削除される。
 ```
 $ git flow release publish <バージョン>
 ```
@@ -87,4 +88,3 @@ $ git flow release publish <バージョン>
 ```
 $ git flow release track <バージョン>
 ```
-
