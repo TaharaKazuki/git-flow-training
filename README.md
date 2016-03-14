@@ -32,11 +32,13 @@ $ git flow init
  
 ### サポートブランチ
 #### サポートブランチの開始操作。
+指定したサポートブランチが作成される。
 ```
 $ git flow [feature|release|hotfix] start <ブランチ名>
 ```
  
 #### サポートブランチの終了操作。
+指定したサポートブランチがマージされ、削除される。
 ```
 $ git flow [feature|release|hotfix] finish <ブランチ名>
 ```
