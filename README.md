@@ -34,11 +34,57 @@ $ git flow init
 #### サポートブランチの開始操作。
 指定したサポートブランチが作成される。
 ```
-$ git flow [feature|release|hotfix] start <ブランチ名>
+$ git flow [feature|release|hotfix] start [ブランチ名]
 ```
  
 #### サポートブランチの終了操作。
 指定したサポートブランチがマージされ、削除される。
 ```
-$ git flow [feature|release|hotfix] finish <ブランチ名>
+$ git flow [feature|release|hotfix] finish [ブランチ名]
+```
+
+### 開発フロー
+#### feature
+##### 開発開始
+```
+$ git flow feature start [ブランチ名]
+```
+
+##### 開発をリモートへ
+複数人と同じブランチで作業する場合は、リモートへプッシュする。
+```
+$ git flow feature publish [ブランチ名]
+```
+
+##### 修正分を取り込む
+他の人の修正分をローカルにプルする。
+```
+$ git flow feature pull [ブランチ名]
+```
+
+##### 開発終了
+`develop`にマージされ、作成した`feature`が削除される。
+```
+$ git flow feature finish [ブランチ名]
+```
+
+#### release
+##### リリース準備開始
+`develop`から`release`を作成する。
+```
+$ git flow release start [バージョン] [develpのコミット]
+```
+> develpのコミットは省略すると`HEAD`が使用される。
+
+##### リリース準備終了
+* `release`で行った修正は、`feature`と同じようにプッシュする。
+* `master`と`develop`にマージされ、`release`が削除される。
+```
+$ git flow release publish [バージョン]
+```
+
+##### TODO:
+`release`リポジトリの修正をトラッキングすることもできる。
+```
+$ git flow release track [バージョン]
 ```
