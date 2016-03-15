@@ -1,5 +1,9 @@
 # git-flow training
  
+## 参考
+* [いまさら聞けない、成功するブランチモデルとgit-flowの基礎知識](http://www.atmarkit.co.jp/ait/articles/1311/18/news017.html)
+* [git-flow cheatsheet](http://danielkummer.github.io/git-flow-cheatsheet/index.ja_JP.html)
+
 ## ブランチ
 ### メインブランチ
 1. master
