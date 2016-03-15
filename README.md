@@ -1,5 +1,9 @@
 # git-flow training
  
+## 参考
+* [いまさら聞けない、成功するブランチモデルとgit-flowの基礎知識](http://www.atmarkit.co.jp/ait/articles/1311/18/news017.html)
+* [git-flow cheatsheet](http://danielkummer.github.io/git-flow-cheatsheet/index.ja_JP.html)
+
 ## ブランチ
 ### メインブランチ
 1. master
@@ -7,7 +11,7 @@
     * リリース時にはタグを付ける。
 1. develop
     * 常に最新の開発結果を保持するブランチ。
-                                                                                                                                                                                                                                          
+
 ### サポートブランチ
 1. feature
     * 新しい機能を開発するブランチ。
@@ -44,6 +48,12 @@ $ git flow [feature|release|hotfix] start [ブランチ名]
 $ git flow [feature|release|hotfix] finish [ブランチ名]
 ```
 
+### push
+ブランチをまとめて`push`する。
+```
+$ git push --all
+```
+
 ### 開発フロー
 #### feature
 ##### 開発開始
@@ -64,7 +74,8 @@ $ git flow feature pull [ブランチ名]
 ```
 
 ##### 開発終了
-`develop`にマージされ、作成した`feature`が削除される。
+`develop`にマージする。
+`feature`が削除される。
 ```
 $ git flow feature finish [ブランチ名]
 ```
@@ -75,17 +86,39 @@ $ git flow feature finish [ブランチ名]
 ```
 $ git flow release start [バージョン] [develpのコミット]
 ```
-> develpのコミットは省略すると`HEAD`が使用される。
+> develpのコミットを省略すると`HEAD`が使用される。
 
-##### リリース準備終了
-* `release`で行った修正は、`feature`と同じようにプッシュする。
-* `master`と`develop`にマージされ、`release`が削除される。
+##### リリース準備
+* `release`で行った修正は、`feature`と同じようにプッシュできる。
 ```
 $ git flow release publish [バージョン]
 ```
 
-##### TODO:
 `release`リポジトリの修正をトラッキングすることもできる。
 ```
 $ git flow release track [バージョン]
+```
+
+##### リリース準備完了
+* `master`に`release`をマージする。
+* `master`にリリース用のタグを付ける。
+* `develop`に`release`をマージする。
+* `release`が削除される。
+```
+$ git flow release finish [バージョン]
+```
+
+#### hotfix
+##### 緊急対応の開始
+* `master`から`hotfix`を作成する。
+```
+git flow hotfix start [ホットフィックス]
+```
+
+##### 緊急対応の終了
+* `master`に`hotfix`をマージする。
+* `master`にホットフィックスのタグを付ける。
+* `develop`に`hotfix`をマージする。
+```
+$ git flow hotfix finish [ホットフィックス]
 ```
