@@ -95,3 +95,18 @@ $ git flow release track [バージョン]
 ```
 $ git flow release finish [バージョン]
 ```
+
+#### hotfix
+##### 緊急対応の開始
+* `master`から`hotfix`を作成する。
+```
+git flow hotfix start [ホットフィックス]
+```
+
+##### 緊急対応の終了
+* `master`に`hotfix`をマージする。
+* `master`にホットフィックスのタグを付ける。
+* `develop`に`hotfix`をマージする。
+```
+$ git flow hotfix finish [ホットフィックス]
+```
