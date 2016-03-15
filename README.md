@@ -48,6 +48,12 @@ $ git flow [feature|release|hotfix] start [ブランチ名]
 $ git flow [feature|release|hotfix] finish [ブランチ名]
 ```
 
+### push
+ブランチをまとめて`push`する。
+```
+$ git push --all
+```
+
 ### 開発フロー
 #### feature
 ##### 開発開始
