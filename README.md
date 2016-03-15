@@ -11,7 +11,7 @@
     * リリース時にはタグを付ける。
 1. develop
     * 常に最新の開発結果を保持するブランチ。
-                                                                                                                                                                                                                                          
+
 ### サポートブランチ
 1. feature
     * 新しい機能を開発するブランチ。
@@ -74,7 +74,8 @@ $ git flow feature pull [ブランチ名]
 ```
 
 ##### 開発終了
-`develop`にマージされ、作成した`feature`が削除される。
+`develop`にマージする。
+`feature`が削除される。
 ```
 $ git flow feature finish [ブランチ名]
 ```
@@ -99,9 +100,9 @@ $ git flow release track [バージョン]
 ```
 
 ##### リリース準備完了
-* `master`に`release`がマージする。
+* `master`に`release`をマージする。
 * `master`にリリース用のタグを付ける。
-* `develop`に`release`がマージする。
+* `develop`に`release`をマージする。
 * `release`が削除される。
 ```
 $ git flow release finish [バージョン]
